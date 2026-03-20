@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		75041ED82F6D91B2006768BF /* suaMusicaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041ED72F6D91B2006768BF /* suaMusicaApp.swift */; };
-		75041EDA2F6D91B2006768BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041ED92F6D91B2006768BF /* ContentView.swift */; };
+		75041EDA2F6D91B2006768BF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041ED92F6D91B2006768BF /* HomeView.swift */; };
 		75041EDC2F6D91B4006768BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75041EDB2F6D91B4006768BF /* Assets.xcassets */; };
 		75041EDF2F6D91B4006768BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75041EDE2F6D91B4006768BF /* Preview Assets.xcassets */; };
 		75041EE92F6D91B4006768BF /* suaMusicaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041EE82F6D91B4006768BF /* suaMusicaTests.swift */; };
@@ -20,6 +20,12 @@
 		75041F1C2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F1B2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift */; };
 		75041F202F6DA82B006768BF /* AVPlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F1F2F6DA82B006768BF /* AVPlayerRepository.swift */; };
 		75041F252F6DA9A1006768BF /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F242F6DA9A1006768BF /* PlayerManager.swift */; };
+		75041F2A2F6DB3A7006768BF /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F292F6DB3A7006768BF /* PlayerView.swift */; };
+		75041F2E2F6DBDB9006768BF /* PlayerControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F2B2F6DBDB9006768BF /* PlayerControlsView.swift */; };
+		75041F2F2F6DBDB9006768BF /* TrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F2C2F6DBDB9006768BF /* TrackListView.swift */; };
+		75041F302F6DBDB9006768BF /* TrackRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F2D2F6DBDB9006768BF /* TrackRowView.swift */; };
+		75041F322F6DC040006768BF /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F312F6DC040006768BF /* PreviewData.swift */; };
+		753E21852F6DC3030018E5F6 /* Double+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E21832F6DC3030018E5F6 /* Double+Time.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +48,7 @@
 /* Begin PBXFileReference section */
 		75041ED42F6D91B2006768BF /* suaMusica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = suaMusica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75041ED72F6D91B2006768BF /* suaMusicaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suaMusicaApp.swift; sourceTree = "<group>"; };
-		75041ED92F6D91B2006768BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		75041ED92F6D91B2006768BF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		75041EDB2F6D91B4006768BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75041EDE2F6D91B4006768BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		75041EE42F6D91B4006768BF /* suaMusicaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = suaMusicaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +62,12 @@
 		75041F1B2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossfadeToNextUseCase.swift; sourceTree = "<group>"; };
 		75041F1F2F6DA82B006768BF /* AVPlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerRepository.swift; sourceTree = "<group>"; };
 		75041F242F6DA9A1006768BF /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
+		75041F292F6DB3A7006768BF /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		75041F2B2F6DBDB9006768BF /* PlayerControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerControlsView.swift; sourceTree = "<group>"; };
+		75041F2C2F6DBDB9006768BF /* TrackListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListView.swift; sourceTree = "<group>"; };
+		75041F2D2F6DBDB9006768BF /* TrackRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackRowView.swift; sourceTree = "<group>"; };
+		75041F312F6DC040006768BF /* PreviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		753E21832F6DC3030018E5F6 /* Double+Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Time.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +132,7 @@
 		75041EDD2F6D91B4006768BF /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				75041F312F6DC040006768BF /* PreviewData.swift */,
 				75041EDE2F6D91B4006768BF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -161,7 +174,8 @@
 		75041F102F6D9A86006768BF /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				75041ED92F6D91B2006768BF /* ContentView.swift */,
+				75041F332F6DC13D006768BF /* Home */,
+				75041F262F6DB33C006768BF /* Player */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -220,6 +234,7 @@
 		75041F212F6DA98F006768BF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				753E21842F6DC3030018E5F6 /* Extensions */,
 				75041F222F6DA992006768BF /* Player */,
 			);
 			path = Core;
@@ -231,6 +246,49 @@
 				75041F242F6DA9A1006768BF /* PlayerManager.swift */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		75041F262F6DB33C006768BF /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				75041F352F6DC164006768BF /* Subviews */,
+				75041F292F6DB3A7006768BF /* PlayerView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		75041F332F6DC13D006768BF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				75041F342F6DC15B006768BF /* Subviews */,
+				75041ED92F6D91B2006768BF /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		75041F342F6DC15B006768BF /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				75041F2C2F6DBDB9006768BF /* TrackListView.swift */,
+				75041F2D2F6DBDB9006768BF /* TrackRowView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		75041F352F6DC164006768BF /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				75041F2B2F6DBDB9006768BF /* PlayerControlsView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		753E21842F6DC3030018E5F6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				753E21832F6DC3030018E5F6 /* Double+Time.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,12 +421,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75041F2F2F6DBDB9006768BF /* TrackListView.swift in Sources */,
 				75041F202F6DA82B006768BF /* AVPlayerRepository.swift in Sources */,
+				75041F2E2F6DBDB9006768BF /* PlayerControlsView.swift in Sources */,
 				75041F1C2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift in Sources */,
+				75041F322F6DC040006768BF /* PreviewData.swift in Sources */,
+				75041F2A2F6DB3A7006768BF /* PlayerView.swift in Sources */,
 				75041F162F6D9D4D006768BF /* Tracks.swift in Sources */,
-				75041EDA2F6D91B2006768BF /* ContentView.swift in Sources */,
+				75041EDA2F6D91B2006768BF /* HomeView.swift in Sources */,
 				75041F182F6D9D88006768BF /* PlayerRepository.swift in Sources */,
 				75041F1A2F6D9D98006768BF /* PlayTrackUseCase.swift in Sources */,
+				75041F302F6DBDB9006768BF /* TrackRowView.swift in Sources */,
+				753E21852F6DC3030018E5F6 /* Double+Time.swift in Sources */,
 				75041F252F6DA9A1006768BF /* PlayerManager.swift in Sources */,
 				75041ED82F6D91B2006768BF /* suaMusicaApp.swift in Sources */,
 			);

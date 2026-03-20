@@ -4,7 +4,7 @@ import SwiftUI
 struct suaMusicaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
