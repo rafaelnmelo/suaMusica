@@ -1,10 +1,3 @@
-//
-//  suaMusicaUITestsLaunchTests.swift
-//  suaMusicaUITests
-//
-//  Created by Rafael Nunes on 20/03/26.
-//
-
 import XCTest
 
 final class suaMusicaUITestsLaunchTests: XCTestCase {

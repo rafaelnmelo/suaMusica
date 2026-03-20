@@ -14,6 +14,10 @@
 		75041EE92F6D91B4006768BF /* suaMusicaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041EE82F6D91B4006768BF /* suaMusicaTests.swift */; };
 		75041EF32F6D91B4006768BF /* suaMusicaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041EF22F6D91B4006768BF /* suaMusicaUITests.swift */; };
 		75041EF52F6D91B4006768BF /* suaMusicaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041EF42F6D91B4006768BF /* suaMusicaUITestsLaunchTests.swift */; };
+		75041F162F6D9D4D006768BF /* Tracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F152F6D9D4D006768BF /* Tracks.swift */; };
+		75041F182F6D9D88006768BF /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F172F6D9D88006768BF /* PlayerRepository.swift */; };
+		75041F1A2F6D9D98006768BF /* PlayTrackUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F192F6D9D98006768BF /* PlayTrackUseCase.swift */; };
+		75041F1C2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F1B2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		75041EEE2F6D91B4006768BF /* suaMusicaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = suaMusicaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75041EF22F6D91B4006768BF /* suaMusicaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suaMusicaUITests.swift; sourceTree = "<group>"; };
 		75041EF42F6D91B4006768BF /* suaMusicaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = suaMusicaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		75041F152F6D9D4D006768BF /* Tracks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracks.swift; sourceTree = SOURCE_ROOT; };
+		75041F172F6D9D88006768BF /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
+		75041F192F6D9D98006768BF /* PlayTrackUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTrackUseCase.swift; sourceTree = "<group>"; };
+		75041F1B2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossfadeToNextUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +102,10 @@
 		75041ED62F6D91B2006768BF /* suaMusica */ = {
 			isa = PBXGroup;
 			children = (
-				75041ED72F6D91B2006768BF /* suaMusicaApp.swift */,
-				75041ED92F6D91B2006768BF /* ContentView.swift */,
-				75041EDB2F6D91B4006768BF /* Assets.xcassets */,
+				75041F112F6D9D1F006768BF /* Domain */,
+				75041F0F2F6D9745006768BF /* App */,
+				75041F102F6D9A86006768BF /* Presentation */,
+				75041F012F6D925C006768BF /* Resources */,
 				75041EDD2F6D91B4006768BF /* Preview Content */,
 			);
 			path = suaMusica;
@@ -125,6 +134,65 @@
 				75041EF42F6D91B4006768BF /* suaMusicaUITestsLaunchTests.swift */,
 			);
 			path = suaMusicaUITests;
+			sourceTree = "<group>";
+		};
+		75041F012F6D925C006768BF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75041EDB2F6D91B4006768BF /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		75041F0F2F6D9745006768BF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				75041ED72F6D91B2006768BF /* suaMusicaApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		75041F102F6D9A86006768BF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				75041ED92F6D91B2006768BF /* ContentView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		75041F112F6D9D1F006768BF /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				75041F142F6D9D40006768BF /* Models */,
+				75041F132F6D9D3A006768BF /* Repositories */,
+				75041F122F6D9D2D006768BF /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		75041F122F6D9D2D006768BF /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				75041F192F6D9D98006768BF /* PlayTrackUseCase.swift */,
+				75041F1B2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		75041F132F6D9D3A006768BF /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				75041F172F6D9D88006768BF /* PlayerRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		75041F142F6D9D40006768BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75041F152F6D9D4D006768BF /* Tracks.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75041F1C2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift in Sources */,
+				75041F162F6D9D4D006768BF /* Tracks.swift in Sources */,
 				75041EDA2F6D91B2006768BF /* ContentView.swift in Sources */,
+				75041F182F6D9D88006768BF /* PlayerRepository.swift in Sources */,
+				75041F1A2F6D9D98006768BF /* PlayTrackUseCase.swift in Sources */,
 				75041ED82F6D91B2006768BF /* suaMusicaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

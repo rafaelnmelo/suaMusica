@@ -1,10 +1,3 @@
-//
-//  suaMusicaApp.swift
-//  suaMusica
-//
-//  Created by Rafael Nunes on 20/03/26.
-//
-
 import SwiftUI
 
 @main
