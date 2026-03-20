@@ -6,41 +6,48 @@ struct PlayerView: View {
 
     var body: some View {
         VStack(spacing: 12) {
-            if isExpanded {
+            if isExpanded { expandedInfo } else { collapsedInfo }
+            PlayerControlsView(manager: manager)
+        }
+    }
+
+    private var expandedInfo: some View {
+        VStack(spacing: 12) {
+            Text(manager.currentTrack?.title ?? "-")
+                .font(.headline)
+                .foregroundStyle(.white)
+            Text(manager.currentTrack?.artist ?? "-")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            Slider(value: $manager.progress, in: 0...max(manager.duration, 1)) { editing in
+                if !editing { manager.seek(to: manager.progress) }
+            }
+            .tint(.white)
+            progressLabels
+        }
+    }
+
+    private var progressLabels: some View {
+        HStack {
+            Text(manager.progress.formattedAsTime)
+            Spacer()
+            Text(manager.duration.formattedAsTime)
+        }
+        .font(.caption)
+        .foregroundStyle(.secondary)
+    }
+
+    private var collapsedInfo: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 2) {
                 Text(manager.currentTrack?.title ?? "-")
-                    .font(.headline)
+                    .font(.subheadline).bold()
                     .foregroundStyle(.white)
                 Text(manager.currentTrack?.artist ?? "-")
-                    .font(.subheadline)
+                    .font(.caption)
                     .foregroundStyle(.secondary)
-
-                Slider(value: $manager.progress, in: 0...max(manager.duration, 1)) { editing in
-                    if !editing { manager.seek(to: manager.progress) }
-                }
-                .tint(.white)
-
-                HStack {
-                    Text(manager.progress.formattedAsTime)
-                    Spacer()
-                    Text(manager.duration.formattedAsTime)
-                }
-                .font(.caption)
-                .foregroundStyle(.secondary)
-            } else {
-                HStack {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(manager.currentTrack?.title ?? "-")
-                            .font(.subheadline).bold()
-                            .foregroundStyle(.white)
-                        Text(manager.currentTrack?.artist ?? "-")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
-                    Spacer()
-                }
             }
-
-            PlayerControlsView(manager: manager)
+            Spacer()
         }
     }
 }

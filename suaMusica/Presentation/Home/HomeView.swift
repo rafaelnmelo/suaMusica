@@ -9,44 +9,53 @@ struct HomeView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             Color.black.ignoresSafeArea()
-
-            VStack(spacing: 0) {
-                HStack {
-                    Text("Músicas")
-                        .font(.largeTitle).bold()
-                        .foregroundStyle(.white)
-                    Spacer()
-                    Toggle("Crossfade", isOn: $manager.crossfadeEnabled)
-                        .fixedSize()
-                        .tint(.blue)
-                        .foregroundStyle(.white)
-                }
-                .padding()
-
-                TrackListView(tracks: tracks, manager: manager)
-
-                Color.clear.frame(height: isPlayerExpanded ? 220 : 120)
-            }
-
-            VStack(spacing: 0) {
-                Button(action: { withAnimation(.spring) { isPlayerExpanded.toggle() } }) {
-                    Capsule()
-                        .fill(Color.white.opacity(0.3))
-                        .frame(width: 36, height: 4)
-                        .padding(.top, 8)
-                }
-
-                PlayerView(manager: manager, isExpanded: isPlayerExpanded)
-                    .padding()
-            }
-            .background(.ultraThinMaterial)
-            .environment(\.colorScheme, .dark)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .padding(.horizontal)
+            content
+            playerSheet
         }
         .preferredColorScheme(.dark)
-        .onAppear {
-            manager.setQueue(tracks)
+        .onAppear { manager.setQueue(tracks) }
+    }
+
+    private var content: some View {
+        VStack(spacing: 0) {
+            header
+            TrackListView(tracks: tracks, manager: manager)
+            Color.clear.frame(height: isPlayerExpanded ? 220 : 120)
+        }
+    }
+
+    private var header: some View {
+        HStack {
+            Text("Músicas")
+                .font(.largeTitle).bold()
+                .foregroundStyle(.white)
+            Spacer()
+            Toggle("Crossfade", isOn: $manager.crossfadeEnabled)
+                .fixedSize()
+                .tint(.blue)
+                .foregroundStyle(.white)
+        }
+        .padding()
+    }
+
+    private var playerSheet: some View {
+        VStack(spacing: 0) {
+            dragHandle
+            PlayerView(manager: manager, isExpanded: isPlayerExpanded)
+                .padding()
+        }
+        .background(.ultraThinMaterial)
+        .environment(\.colorScheme, .dark)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .padding(.horizontal)
+    }
+
+    private var dragHandle: some View {
+        Button(action: { withAnimation(.spring) { isPlayerExpanded.toggle() } }) {
+            Capsule()
+                .fill(Color.white.opacity(0.3))
+                .frame(width: 36, height: 4)
+                .padding(.top, 8)
         }
     }
 }
