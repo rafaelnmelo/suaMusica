@@ -19,6 +19,7 @@
 		75041F1A2F6D9D98006768BF /* PlayTrackUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F192F6D9D98006768BF /* PlayTrackUseCase.swift */; };
 		75041F1C2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F1B2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift */; };
 		75041F202F6DA82B006768BF /* AVPlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F1F2F6DA82B006768BF /* AVPlayerRepository.swift */; };
+		75041F252F6DA9A1006768BF /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75041F242F6DA9A1006768BF /* PlayerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		75041F192F6D9D98006768BF /* PlayTrackUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTrackUseCase.swift; sourceTree = "<group>"; };
 		75041F1B2F6D9DA8006768BF /* CrossfadeToNextUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossfadeToNextUseCase.swift; sourceTree = "<group>"; };
 		75041F1F2F6DA82B006768BF /* AVPlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerRepository.swift; sourceTree = "<group>"; };
+		75041F242F6DA9A1006768BF /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				75041F0F2F6D9745006768BF /* App */,
+				75041F212F6DA98F006768BF /* Core */,
 				75041F1D2F6DA7FE006768BF /* Data */,
 				75041F112F6D9D1F006768BF /* Domain */,
 				75041F102F6D9A86006768BF /* Presentation */,
@@ -212,6 +215,22 @@
 				75041F1F2F6DA82B006768BF /* AVPlayerRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		75041F212F6DA98F006768BF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				75041F222F6DA992006768BF /* Player */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		75041F222F6DA992006768BF /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				75041F242F6DA9A1006768BF /* PlayerManager.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +369,7 @@
 				75041EDA2F6D91B2006768BF /* ContentView.swift in Sources */,
 				75041F182F6D9D88006768BF /* PlayerRepository.swift in Sources */,
 				75041F1A2F6D9D98006768BF /* PlayTrackUseCase.swift in Sources */,
+				75041F252F6DA9A1006768BF /* PlayerManager.swift in Sources */,
 				75041ED82F6D91B2006768BF /* suaMusicaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
