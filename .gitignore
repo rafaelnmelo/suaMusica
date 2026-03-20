@@ -1,62 +1,129 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+# =========================================================
+# Xcode - Arquivos de build e dados derivados
+# =========================================================
 
-## User settings
-xcuserdata/
+build/
+DerivedData/
+*.xcworkspace/xcuserdata/
+*.xcuserdatad/
+*.xcuserstate
 
-## Obj-C/Swift specific
-*.hmap
+# Arquivos antigos de compatibilidade (Xcode legado)
+*.xccheckout
+*.xcscmblueprint
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.moved-aside
 
-## App packaging
-*.ipa
-*.dSYM.zip
-*.dSYM
-
-## Playgrounds
-timeline.xctimeline
-playground.xcworkspace
-
-# Swift Package Manager
-#
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
-# *.xcodeproj
-#
-# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
-# hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
+# =========================================================
+# Swift Package Manager (SPM)
+# =========================================================
 
 .build/
+.swiftpm/
+Packages/
 
+# Se você quiser versionar dependências resolvidas, remova a linha abaixo
+Package.resolved
+
+# =========================================================
 # CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# Pods/
-#
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+# =========================================================
 
+Pods/
+*.lock
+
+# Se você preferir versionar o Podfile.lock, remova a linha acima
+# Recomendado em times: manter Podfile.lock no repositório
+
+# =========================================================
 # Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
+# =========================================================
 
 Carthage/Build/
+Carthage/Checkouts/
 
+# =========================================================
+# Dependências de outras ferramentas
+# =========================================================
+
+# Accio
+Dependencies/
+.accio/
+
+# Tuist
+Tuist/Dependencies/
+Tuist/.build/
+
+# =========================================================
 # fastlane
-#
-# It is recommended to not store the screenshots in the git repo.
-# Instead, use fastlane to re-generate the screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
+# =========================================================
 
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
+fastlane/screenshots/
+fastlane/test_output/
+
+# =========================================================
+# Arquivos de build e distribuição
+# =========================================================
+
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# =========================================================
+# Playgrounds
+# =========================================================
+
+timeline.xctimeline
+playground.xcworkspace
+
+# =========================================================
+# Arquivos de sistema operacional
+# =========================================================
+
+.DS_Store
+
+# =========================================================
+# Configurações locais do usuário
+# =========================================================
+
+*.xcconfig.local
+.env
+.env.*
+
+# =========================================================
+# Xcode project internals (manter apenas o essencial)
+# =========================================================
+
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+
+# =========================================================
+# Code Injection / Hot Reload
+# =========================================================
+
+iOSInjectionProject/
+
+# =========================================================
+# Arquivos temporários e logs
+# =========================================================
+
+*.log
+*.tmp
+*.swp
+
+# =========================================================
+# Coverage e profiling
+# =========================================================
+
+*.gcno
+*.gcda
+*.profdata
