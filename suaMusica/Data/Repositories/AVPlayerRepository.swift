@@ -7,10 +7,12 @@ final class AVPlayerRepository: PlayerRepository {
     private var usingA = true
     private var cancellables = Set<AnyCancellable>()
     
+    /// Player atualmente em uso para reprodução.
     var activePlayer: AVPlayer {
         usingA ? playerA : playerB
     }
     
+    /// Player em espera, usado para pré-carregamento e crossfade.
     var idlePlayer: AVPlayer {
         usingA ? playerB : playerA
     }
@@ -19,23 +21,27 @@ final class AVPlayerRepository: PlayerRepository {
         configureAudioSession()
     }
     
+    /// Configura a sessão de áudio para reprodução em background.
     private func configureAudioSession() {
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
         try? AVAudioSession.sharedInstance().setActive(true)
     }
     
+    /// Carrega e inicia a reprodução da faixa no player ativo.
     func play(track: Track) {
         let item = AVPlayerItem(url: track.streamURL)
         activePlayer.replaceCurrentItem(with: item)
         activePlayer.play()
     }
     
+    /// Pré-carrega a faixa no player ocioso sem iniciar a reprodução.
     func preload(track: Track) {
         let item = AVPlayerItem(url: track.streamURL)
         idlePlayer.replaceCurrentItem(with: item)
         idlePlayer.pause()
     }
     
+    /// Realiza transição suave entre o player ativo e o ocioso ao longo de `duration` segundos.
     func crossfade(to track: Track, duration: Double = 3.0) {
         preload(track: track)
         idlePlayer.volume = 0
@@ -56,10 +62,12 @@ final class AVPlayerRepository: PlayerRepository {
         }
     }
     
+    /// Pausa o player ativo.
     func pause() {
         activePlayer.pause()
     }
     
+    /// Move a reprodução do player ativo para o tempo especificado em segundos.
     func seek(to seconds: Double) {
         let time = CMTime(seconds: seconds, preferredTimescale: 1)
         activePlayer.seek(to: time)

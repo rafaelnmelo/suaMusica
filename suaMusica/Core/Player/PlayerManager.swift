@@ -24,6 +24,7 @@ final class PlayerManager: ObservableObject {
         observeEndOfTrack()
     }
     
+    /// Define a fila de reprodução e a faixa inicial, sem iniciar a reprodução.
     func setQueue(_ tracks: [Track], startIndex: Int = 0) {
         queue = tracks
         index = startIndex
@@ -32,6 +33,7 @@ final class PlayerManager: ObservableObject {
         preloadNext()
     }
     
+    /// Inicia a reprodução da faixa atual na fila.
     func playCurrent() {
         guard queue.indices.contains(index) else { return }
         let track = queue[index]
@@ -43,6 +45,7 @@ final class PlayerManager: ObservableObject {
         updateNowPlaying()
     }
     
+    /// Avança para a próxima faixa. Se `crossfade` for `true` e o crossfade estiver habilitado, realiza a transição suave.
     func next(crossfade: Bool = false) {
         guard index + 1 < queue.count else { return }
         index += 1
@@ -61,28 +64,33 @@ final class PlayerManager: ObservableObject {
         }
     }
     
+    /// Volta para a faixa anterior na fila.
     func previous() {
         guard index > 0 else { return }
         index -= 1
         playCurrent()
     }
     
+    /// Pausa a reprodução atual.
     func pause() {
         repository.pause()
         isPlaying = false
     }
     
+    /// Move a reprodução para o tempo especificado em segundos.
     func seek(to seconds: Double) {
         let time = CMTime(seconds: seconds, preferredTimescale: 600)
         repository.activePlayer.seek(to: time)
     }
     
+    /// Pré-carrega a próxima faixa da fila para reduzir latência na transição.
     private func preloadNext() {
         let nextIndex = index + 1
         guard queue.indices.contains(nextIndex) else { return }
         repository.preload(track: queue[nextIndex])
     }
     
+    /// Registra observador para avançar automaticamente ao fim de cada faixa.
     private func observeEndOfTrack() {
         NotificationCenter.default.addObserver(
             forName: .AVPlayerItemDidPlayToEndTime,
@@ -93,6 +101,7 @@ final class PlayerManager: ObservableObject {
         }
     }
     
+    /// Inicia observação periódica do progresso de reprodução, atualizando `progress` a cada segundo.
     private func observeProgress() {
         if let observer = timeObserver {
             timeObserverPlayer?.removeTimeObserver(observer)
@@ -108,6 +117,7 @@ final class PlayerManager: ObservableObject {
         timeObserverPlayer = player
     }
 
+    /// Carrega assincronamente a duração da faixa atual e atualiza `duration`.
     private func observeDuration() {
         duration = 0
         guard let asset = repository.activePlayer.currentItem?.asset else { return }
@@ -120,6 +130,7 @@ final class PlayerManager: ObservableObject {
         }
     }
     
+    /// Configura os controles remotos do sistema (Control Center e tela de bloqueio).
     private func setupRemoteControls() {
         let center = MPRemoteCommandCenter.shared()
         center.playCommand.addTarget { [weak self] _ in
@@ -133,6 +144,7 @@ final class PlayerManager: ObservableObject {
         }
     }
     
+    /// Atualiza as informações exibidas no Now Playing do sistema com a faixa atual.
     private func updateNowPlaying() {
         guard let track = currentTrack else { return }
         MPNowPlayingInfoCenter.default().nowPlayingInfo = [
