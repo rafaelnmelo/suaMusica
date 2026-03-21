@@ -13,6 +13,17 @@ struct PlayerView: View {
 
     private var expandedInfo: some View {
         VStack(spacing: 12) {
+            if let cover = manager.currentTrack?.coverImage {
+                GeometryReader { geo in
+                    Image(cover)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geo.size.width, height: geo.size.width)
+                        .clipped()
+                        .cornerRadius(8)
+                }
+                .aspectRatio(1, contentMode: .fit)
+            }
             Text(manager.currentTrack?.title ?? "-")
                 .font(.headline)
                 .foregroundStyle(.white)
@@ -52,16 +63,19 @@ struct PlayerView: View {
     }
 }
 
-#Preview("Colapsado") {
-    PlayerView(manager: PlayerManager.shared, isExpanded: false)
-        .padding()
-        .background(Color.black)
-        .preferredColorScheme(.dark)
+#Preview {
+    Group {
+        Spacer()
+        PlayerView(manager: PlayerManager.shared, isExpanded: false)
+            .padding()
+            .background(Color.black)
+            .preferredColorScheme(.light)
+        Spacer()
+        PlayerView(manager: PlayerManager.shared, isExpanded: true)
+            .padding()
+            .background(Color.black)
+            .preferredColorScheme(.light)
+        Spacer()
+    }
 }
 
-#Preview("Expandido") {
-    PlayerView(manager: PlayerManager.shared, isExpanded: true)
-        .padding()
-        .background(Color.black)
-        .preferredColorScheme(.dark)
-}

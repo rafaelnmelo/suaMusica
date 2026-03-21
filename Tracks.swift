@@ -5,4 +5,5 @@ struct Track: Identifiable, Equatable {
     let title: String
     let artist: String
     let streamURL: URL
+    var coverImage: String?
 }

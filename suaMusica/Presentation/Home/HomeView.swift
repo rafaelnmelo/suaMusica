@@ -2,7 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var manager = PlayerManager.shared
-    @State private var isPlayerExpanded = true
+    @State private var isPlayerExpanded = false
 
     private let tracks = Track.previews
 
